@@ -183,7 +183,6 @@ class Login {
 
     loginOffline() {
         let mailInput = document.querySelector('.Mail')
-        let passwordInput = document.querySelector('.Password')
         let cancelMojangBtn = document.querySelector('.cancel-mojang')
         let infoLogin = document.querySelector('.info-login')
         let loginBtn = document.querySelector(".login-btn")
@@ -205,7 +204,6 @@ class Login {
             cancelMojangBtn.disabled = true;
             loginBtn.disabled = true;
             mailInput.disabled = true;
-            passwordInput.disabled = true;
             infoLogin.innerHTML = "Connexion en cours...";
 
 
@@ -214,7 +212,6 @@ class Login {
                 cancelMojangBtn.disabled = false;
                 loginBtn.disabled = false;
                 mailInput.disabled = false;
-                passwordInput.disabled = false;
                 return
             }
 
@@ -223,11 +220,10 @@ class Login {
                 cancelMojangBtn.disabled = false;
                 loginBtn.disabled = false;
                 mailInput.disabled = false;
-                passwordInput.disabled = false;
                 return
             }
 
-            Mojang.getAuth(mailInput.value, passwordInput.value).then(async account_connect => {
+            Mojang.getAuth(mailInput.value).then(async account_connect => {
                 let account = {
                     access_token: account_connect.access_token,
                     client_token: account_connect.client_token,
@@ -252,7 +248,6 @@ class Login {
                 mailInput.value = "";
                 loginBtn.disabled = false;
                 mailInput.disabled = false;
-                passwordInput.disabled = false;
                 loginBtn.style.display = "block";
                 infoLogin.innerHTML = "&nbsp;";
             }).catch(err => {
@@ -260,7 +255,6 @@ class Login {
                 cancelMojangBtn.disabled = false;
                 loginBtn.disabled = false;
                 mailInput.disabled = false;
-                passwordInput.disabled = false;
                 infoLogin.innerHTML = 'Adresse E-mail ou mot de passe invalide'
             })
         })
