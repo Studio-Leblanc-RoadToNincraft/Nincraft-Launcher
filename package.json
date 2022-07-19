@@ -1,11 +1,11 @@
 {
     "name": "Nincraft-Launcher",
     "preductname": "Nincraft Launcher",
-    "version": "1.0.2",
+    "version": "1.0.3",
     "description": "Launcher Nincraft for Minecraft",
     "main": "src/app.js",
     "author": "Luuxis",
-    "url": "https://panel.nincraft.fr/launcher",
+    "url": "https://launcher.nincraft.fr",
     "engines": {
         "node": "16.x.x"
     },
