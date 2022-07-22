@@ -5,7 +5,7 @@
     "description": "Launcher Nincraft for Minecraft",
     "main": "src/app.js",
     "author": "Luuxis",
-    "url": "https://launcher.nincraft.fr",
+    "url": "http://launcher.nincraft.fr",
     "engines": {
         "node": "16.x.x"
     },
