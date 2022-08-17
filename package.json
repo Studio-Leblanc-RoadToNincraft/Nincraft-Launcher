@@ -1,7 +1,7 @@
 {
     "name": "Nincraft-Launcher",
     "preductname": "Nincraft Launcher",
-    "version": "1.0.4",
+    "version": "1.0.5",
     "description": "Launcher Nincraft for Minecraft",
     "main": "src/app.js",
     "author": "Luuxis",
