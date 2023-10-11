@@ -1,33 +1,43 @@
 {
     "name": "Nincraft-Launcher",
     "preductname": "Nincraft Launcher",
-    "version": "1.0.6",
-    "description": "Launcher Nincraft for Minecraft",
+    "version": "2.0.0",
+    "description": "Launcher Mincraft selvania",
     "main": "src/app.js",
-    "author": "Luuxis",
+    "author": {
+        "name": "luuxis, Inc.",
+        "email": "contact@luuxis.fr",
+        "url": "https://github.com/luuxis"
+    },
     "url": "http://launcher.nincraft.fr",
     "engines": {
         "node": "^18.x.x"
     },
     "scripts": {
         "start": "cross-env-shell NODE_ENV=dev electron .",
-        "build": "node build.js",
-        "dev": "nodemon --exec npm start"
+        "dev": "cross-env-shell DEV_TOOL=open nodemon --exec npm start",
+        "build": "node build.js --obf=true --build=platform",
+        "icon": "node build.js --icon=https://raw.githubusercontent.com/Studio-Leblanc-RoadToNincraft/Nincraft-Launcher/master/src/assets/images/icon.png"
     },
-    "license": "CC0",
+    "license": "CCANC",
     "nodemonConfig": {
-        "ext": "js,html,css"
+        "ext": "js,html,css",
+        "ignore": "**/test"
     },
     "dependencies": {
-        "electron-updater": "^5.0.1",
-        "minecraft-java-core": "^3.1.1",
-        "node-fetch": "^2.6.7"
+        "electron-updater": "^6.1.1",
+        "minecraft-java-core": "^3.7.2",
+        "node-bdd": "^2.0.3",
+        "node-fetch": "^2.6.13"
     },
     "devDependencies": {
         "cross-env": "^7.0.3",
-        "electron": "^20.0.0",
-        "electron-builder": "^23.0.3",
-        "nodemon": "^2.0.16"
+        "electron": "^26.0.0",
+        "electron-builder": "^24.6.3",
+        "javascript-obfuscator": "^4.0.2",
+        "jimp": "^0.22.10",
+        "nodemon": "^3.0.1",
+        "png2icons": "^2.0.1"
     },
     "repository": {
         "type": "git",
