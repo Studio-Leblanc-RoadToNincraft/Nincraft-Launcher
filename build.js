@@ -73,14 +73,9 @@ class Index {
                 directories: { "output": "dist" },
                 compression: 'maximum',
                 asar: true,
-                // publish: [{
-                //     provider: "github",
-                //     releaseType: 'release',
-                // }],
                 publish: [{
-                    provider: "generic",
-                    url: `http://launcher.luuxis.fr/launcher/app`,
-                    channel: 'latest'
+                    provider: "github",
+                    releaseType: 'release',
                 }],
                 win: {
                     icon: "./app/assets/images/icon.ico",
