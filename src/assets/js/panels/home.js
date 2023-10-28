@@ -20,16 +20,17 @@ class Home {
 
     async news() {
         let newsElement = document.querySelector('.news-list');
-        let news = await config.getNews().then(res => res).catch(err => false);
-        if (news) {
-            if (!news.length) {
+        let newsResult;
+        let news = await config.getNews().then(res => newsResult = res.items).catch(err => false);
+        if (newsResult) {
+            if (!newsResult.length) {
                 let blockNews = document.createElement('div');
                 blockNews.classList.add('news-block');
                 blockNews.innerHTML = `
                     <div class="news-header">
                         <img class="server-status-icon" src="assets/images/icon.png">
                         <div class="header-text">
-                            <div class="title">Aucun news n'ai actuellement disponible.</div>
+                            <div class="title">Aucune news n'ai actuellement disponible.</div>
                         </div>
                         <div class="date">
                             <div class="day">1</div>
@@ -42,16 +43,20 @@ class Home {
                         </div>
                     </div>`
                 newsElement.appendChild(blockNews);
-            } else {
+            } else { 
                 for (let News of news) {
-                    let date = this.getdate(News.publish_date)
+                    let date = this.getdate(News.pubDate)
                     let blockNews = document.createElement('div');
                     blockNews.classList.add('news-block');
                     blockNews.innerHTML = `
                         <div class="news-header">
                             <img class="server-status-icon" src="assets/images/icon.png">
                             <div class="header-text">
-                                <div class="title">${News.title}</div>
+                                <a href="${News.link}" target="_blank" 
+                                title='Voir "${News.title}" sur le site' rel="noopener" 
+                                style="text-decoration: none; color: white;">
+                                    <div class="title">${News.title}</div>
+                                </a>
                             </div>
                             <div class="date">
                                 <div class="day">${date.day}</div>
@@ -67,14 +72,14 @@ class Home {
                     newsElement.appendChild(blockNews);
                 }
             }
-        } else {
+        } else { 
             let blockNews = document.createElement('div');
             blockNews.classList.add('news-block');
             blockNews.innerHTML = `
                 <div class="news-header">
                         <img class="server-status-icon" src="assets/images/icon.png">
                         <div class="header-text">
-                            <div class="title">Error.</div>
+                            <div class="title">Erreur.</div>
                         </div>
                         <div class="date">
                             <div class="day">1</div>
