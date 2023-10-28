@@ -1,7 +1,7 @@
 {
     "name": "Nincraft-Launcher",
     "preductname": "Nincraft Launcher",
-    "version": "2.0.1",
+    "version": "2.1.0",
     "description": "Launcher Mincraft selvania",
     "main": "src/app.js",
     "author": {
@@ -26,13 +26,14 @@
     },
     "dependencies": {
         "electron-updater": "^6.1.1",
-        "minecraft-java-core": "^3.7.2",
+        "minecraft-java-core": "^3.7.3",
         "node-bdd": "^2.0.3",
-        "node-fetch": "^2.6.13"
+        "node-fetch": "^2.6.13",
+        "xml-js": "^1.6.11"
     },
     "devDependencies": {
         "cross-env": "^7.0.3",
-        "electron": "^26.0.0",
+        "electron": "^27.0.2",
         "electron-builder": "^24.6.3",
         "javascript-obfuscator": "^4.0.2",
         "jimp": "^0.22.10",
