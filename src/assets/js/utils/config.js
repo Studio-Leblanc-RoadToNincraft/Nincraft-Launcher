@@ -9,7 +9,6 @@ let url = pkg.user ? `${pkg.url}/${pkg.user}` : pkg.url
 
 let config = `${url}/launcher/config-launcher/config.json`;
 let news = `https://nincraft.fr/api/rss`;
-let rss2json = "https://api.rss2json.com/v1/api.json?rss_url=";
 
 class Config {
     GetConfig() {
@@ -39,7 +38,7 @@ class Config {
 
     async getNews() {
         return new Promise((resolve, reject) => {
-            nodeFetch(rss2json+news).then(async config => {
+            nodeFetch(news).then(async config => {
                 if (config.status === 200) return resolve(config.json());
                 else return reject({ error: { code: config.statusText, message: 'server not accessible' } });
             }).catch(error => {
