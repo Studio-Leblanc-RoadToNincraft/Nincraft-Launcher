@@ -1,7 +1,7 @@
 {
     "name": "Nincraft-Launcher",
     "preductname": "Nincraft Launcher",
-    "version": "2.1.1",
+    "version": "2.1.2",
     "description": "Launcher Mincraft selvania",
     "main": "src/app.js",
     "author": {
@@ -10,9 +10,6 @@
         "url": "https://github.com/luuxis"
     },
     "url": "http://luuxcraft.fr/api/user/f0a00398-4187-4d0e-aa3d-ca6ab07c9592",
-    "engines": {
-        "node": "^18.x.x"
-    },
     "scripts": {
         "start": "cross-env-shell NODE_ENV=dev electron .",
         "dev": "cross-env-shell DEV_TOOL=open nodemon --exec npm start",
